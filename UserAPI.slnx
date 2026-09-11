@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Core/Core.csproj" />
+  <Project Path="DbLayer/DbLayer.csproj" />
+  <Project Path="ServiceLayer/ServiceLayer.csproj" />
+  <Project Path="UserAPI/UserAPI.csproj" />
+</Solution>
