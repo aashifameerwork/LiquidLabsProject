@@ -2,8 +2,6 @@
 
 LiquidLabsProject is a simple user API built using **ASP.NET Core Web API, Microsoft SQL Server and ADO.NET**.
 
-The application gets user data from a public API and saves it in SQL Server. When a user is requested, it first checks the database. If the user is not there, it gets the user from the API and saves it to the database.
-
 ## Tech Stack
 
 - **Backend:** ASP.NET Core Web API (.Net 10)
@@ -67,3 +65,65 @@ CREATE TABLE Users (
 );
 GO
 ```
+## 4. Configure the Connection String
+
+Open:
+
+```text
+UserAPI/appsettings.json
+```
+
+Update the connection string according to your SQL Server setup. (Don't change the database)
+
+Example:
+
+```json
+"ConnectionStrings": {
+  "AashifConn": "Server=(localdb)\\MSSQLLocalDB;Database=LiquidLabsUserDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+```
+
+## 5. Run the Project
+
+Open the project in Visual Studio and run the `UserAPI` project.
+
+You can also use:
+
+```bash
+dotnet build
+```
+
+and:
+
+```bash
+dotnet run
+```
+
+---
+
+## API Endpoints
+
+| Method | Endpoint          | Description      |
+| ------ | ----------------- | ---------------- |
+| GET    | `/api/users`      | Get all users    |
+| GET    | `/api/users/{id}` | Get a user by ID |
+
+### Get all users
+
+```text
+https://localhost:<port>/api/users
+```
+
+### Get user by ID
+
+```text
+https://localhost:<port>/api/users/5
+```
+
+The API URL and port can be found in `UserAPI/Properties/launchSettings.json`.
+
+## Packages Used
+ - Microsoft.Extensions.Http
+ - Microsoft.Data.SqlClient
+
+### By Aashif Ameer
