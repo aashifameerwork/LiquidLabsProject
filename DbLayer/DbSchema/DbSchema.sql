@@ -1,0 +1,13 @@
+﻿CREATE DATABASE LiquidLabsUserDb;
+GO
+
+USE LiquidLabsUserDb;
+
+CREATE TABLE Users (
+	Id BIGINT PRIMARY KEY,
+	Name NVARCHAR(200),
+	Email NVARCHAR(200),
+	Gender NVARCHAR(10),
+	Status NVARCHAR(20)
+);
+GO
