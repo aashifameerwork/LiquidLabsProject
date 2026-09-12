@@ -31,7 +31,7 @@ namespace UserAPI.Controllers
         {
             var user = await _userService.GetUserByIdAsync(id);
 
-            if(user == null)
+            if(user.Id == 0)
                 return NotFound();
 
             return Ok(user);

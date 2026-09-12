@@ -56,7 +56,7 @@ namespace ServiceLayer.Services
             {
                 var user = await _userRepository.GetUserByIdAsync(id);
 
-                if(user != null)
+                if(user.Id != 0)
                 {
                     return user;
                 }               
