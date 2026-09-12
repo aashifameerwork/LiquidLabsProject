@@ -22,6 +22,13 @@ namespace ServiceLayer.Services
             _httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Gets all users from the database. If no users are found, it gets them from the API and saves them in the db.
+        /// </summary>
+        /// <returns>
+        /// Success: List of Users
+        /// Failure: An empty list
+        /// </returns>
         public async Task<List<User>> GetAllUsersAsync()
         {
             try
@@ -50,6 +57,15 @@ namespace ServiceLayer.Services
             }
         }
 
+        /// <summary>
+        /// Gets a user by ID from the database. 
+        /// If the user is not found, it gets all users from the API, saves them in the db, and then returns the requested user.
+        /// </summary>
+        /// <param name="id">ID of the user to retrieve</param>
+        /// <returns>
+        /// Success: User object
+        /// Failure: An empty User object
+        /// </returns>
         public async Task<User> GetUserByIdAsync(long id)
         {
             try
@@ -82,7 +98,15 @@ namespace ServiceLayer.Services
                 return new User();
             }
         }
-        
+
+        /// <summary>
+        /// Gets users from the public API.
+        /// Public API URL : https://gorest.in/public/v2/users
+        /// </summary>
+        /// <returns>
+        /// Success: List of Users
+        /// Failure: An empty list
+        /// </returns>
         private async Task<List<User>> GetUsersFromApiAsync()
         {
             try

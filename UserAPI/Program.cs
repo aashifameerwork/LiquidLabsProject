@@ -38,8 +38,8 @@ Console.WriteLine("=====================================");
 Console.WriteLine("Liquid Labs User API - Aashif Ameer");
 Console.WriteLine("=====================================");
 Console.WriteLine("End Point Information:\n");
-Console.WriteLine("GET {url}/api/users");
-Console.WriteLine("GET {url}/api/users/{id}");
+Console.WriteLine("To get all users     : [GET] {url}/api/users");
+Console.WriteLine("To get a user by ID  : [GET] {url}/api/users/{id}");
 Console.WriteLine("-------------------------------------");
 
 app.Run();

@@ -103,6 +103,11 @@ namespace DbLayer.Repositories
             }
         }
 
+        /// <summary>
+        /// Adds a new user to the Users table
+        /// </summary>
+        /// <param name="user">User to add</param>
+        /// <returns>True if successful, false otherwise</returns>
         public async Task<bool> AddUserToDbAsync(User user)
         {
             try
