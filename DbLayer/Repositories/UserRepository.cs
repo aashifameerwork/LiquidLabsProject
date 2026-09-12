@@ -69,7 +69,7 @@ namespace DbLayer.Repositories
         /// Success: User object
         /// Failure: An empty User object
         /// </returns>
-        public async Task<User> GetUserById(long id)
+        public async Task<User> GetUserByIdAsync(long id)
         {
             try
             {

@@ -3,12 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DbLayer.Interfaces
+namespace ServiceLayer.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserService
     {
         Task<List<User>> GetAllUsersAsync();
         Task<User> GetUserByIdAsync(long id);
-        Task<bool> AddUserToDbAsync(User user);
     }
 }
