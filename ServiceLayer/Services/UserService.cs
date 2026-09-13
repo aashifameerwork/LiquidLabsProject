@@ -77,20 +77,18 @@ namespace ServiceLayer.Services
                     return user;
                 }               
 
-                var usersListFromApi = await GetUsersFromApiAsync();
-                
-                if (!usersListFromApi.Any())
-                    return new User();
+                var usersListFromApi = await GetUsersFromApiAsync();            
 
+                var requestedUser = usersListFromApi.FirstOrDefault(u => u.Id == id);
+                if(requestedUser == null)
+                    return new User();
 
                 foreach (var userObj in usersListFromApi)
                 {
                     await _userRepository.AddUserToDbAsync(userObj);
                 }
 
-                var requestedUser = usersListFromApi.FirstOrDefault(u => u.Id == id);
-
-                return requestedUser ?? new User();
+                return requestedUser;
             }
             catch (Exception ex)
             {
